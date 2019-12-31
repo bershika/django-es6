@@ -1,0 +1,15 @@
+{% load compress static %}
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Test</title>
+  </head>
+  <body>
+    <h1>{{ title }}</h1>
+    <hr>
+    <div id="foo"></div>
+    {% compress js %}
+      <script type="module" src='{% static "my_test/main.js" %}'></script>
+    {% endcompress %}
+  </body>
+</html>
