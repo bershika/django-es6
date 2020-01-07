@@ -2,14 +2,16 @@
   <v-app>
     <v-content>
       <div id="app">
-        <v-text-field v-model="message"></v-text-field>
         <HelloWorld :msg="message" :counter="counter" :state="state" />
-        <button @click="counter=counter +1">+1</button>
-        <button @click="state = !state">!!</button>
-        <v-btn small color="primary" @click="counter=counter +1">
-          <v-icon left>mdi-pencil</v-icon>
-          +1
+        <v-text-field label="VUE TITLE" clearable outlined v-model="message"></v-text-field>
+        <v-btn small color="green" @click="counter=counter + 1">
+          <v-icon>mdi-arrow-up-bold</v-icon>
         </v-btn>
+        <v-btn small color="red" @click="counter=counter - 1">
+          <v-icon>mdi-arrow-down-bold</v-icon>
+        </v-btn>
+        <br>
+        <v-switch v-model="state" color="orange" label="State"></v-switch>
       </div>
     </v-content>
   </v-app>

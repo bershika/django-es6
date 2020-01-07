@@ -1,8 +1,12 @@
 <template>
   <div class="hello">
-    <h2>{{ msg }}</h2>
-    <p> {{ counter }}</p>
-    <p> {{ state }}</p>
+    <h2 v-if="msg">{{ msg }}</h2>
+    <h2 v-else>No message</h2>
+    <p>{{ counter }}</p>
+    <p>
+      <v-icon color="green" v-if="state">mdi-thumb-up</v-icon>
+      <v-icon v-else>mdi-thumb-down</v-icon>
+    </p>
   </div>
 </template>
 
